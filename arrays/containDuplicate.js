@@ -3,7 +3,7 @@
 // Example 1:
 
 // Input:
-//  nums = [1,2,3,1]
+
 // Output: true
 // Example 2:
 
@@ -12,14 +12,22 @@
 // Example 3:
 
 // Input:
- nums = [1,1,1,3,3,4,3,2,4,2]
+//  nums = [1,1,1,3,3,4,3,2,4,2]
 // Output: true
 
+//
+//peude -code
+//loop over the array
+//variable to store true or values
+//
 
+nums = [1,2,3,1,5,7,1]
 //2 methods using hash ,wont achive constant space
 var containsDuplicate = function(nums) {
     
-    let isDuplicate = false , i= 0, checkMap = new Map()
+    let isDuplicate = false 
+    i= 0,
+    checkMap = new Map()
    while (!isDuplicate && i < nums.length) {
        checkMap.set(nums[i],nums[i])
        console.log(checkMap)
