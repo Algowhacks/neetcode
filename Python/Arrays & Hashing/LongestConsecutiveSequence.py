@@ -27,21 +27,21 @@ Output: 9
 '''
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        if len(nums) == 0:
+        if len(nums) == 0:# Base case => If the array is empty
             return 0
-        numset = set()
+        numset = set()# initialize a hashset
         for num in nums:
-            numset.add(num)
-        longest_streak = 1
-        for i in numset:
-            if i-1 in numset:
+            numset.add(num)#add elements of the array to eliminate the duplicates
+        longest_streak = 1#initialize longest steak as 1(minimum it can be if the array is not empty)
+        for i in numset:#itrerate through the hashset
+            if i-1 in numset:#check if number preceeding i in the number line is present in the hashset
                 continue
-            i+=1
-            current_streak = 1
-            while i in numset:
-                current_streak+=1
-                i+=1
-            longest_streak = max(longest_streak, current_streak)
+            i+=1#else move to the next digit in the hashset
+            current_streak = 1#initialize current streak as one 
+            while i in numset:#if incremented i is present in the numset 
+                current_streak+=1# incerement current streak by one 
+                i+=1#increment i 
+            longest_streak = max(longest_streak, current_streak)#gsetting the new longest streak based on the current streak
         return longest_streak
         
                 
